@@ -1,0 +1,7 @@
+.card img{
+    height: 150px;
+    object-fit: contain;
+}
+.form-control:focus{
+    box-shadow: none;
+}

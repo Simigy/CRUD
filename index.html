@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h2 class="text-center mt-5">Store Management System</h2>
+    <div class="w-75 mx-auto py-5 text-capitalize">
+      <label for="productName" class="fs-5 mb-2">Product name : </label>
+      <input
+        oninput="validateInputs(this)"
+        type="text"
+        id="productName"
+        class="form-control mb-3"
+      />
+      <div class="alert alert-danger py-1 mt-2 d-none">
+        <small>product name must start with uppercase</small>
+      </div>
+
+      <label for="productPrice" class="fs-5 mb-2">Product Price : </label>
+      <input
+        oninput="validateInputs(this)"
+        type="number"
+        id="productPrice"
+        class="form-control mb-3"
+      />
+      <div class="alert alert-danger py-1 mt-2 d-none">
+        <small>product price must be between 100 & 199</small>
+      </div>
+
+      <label for="productCategory" class="fs-5 mb-2">Product Category : </label>
+      <input
+        oninput="validateInputs(this)"
+        type="text"
+        list="category"
+        id="productCategory"
+        class="form-control mb-3"
+      />
+      <div class="alert alert-danger py-1 mt-2 d-none">
+        <small>product category must be one of choices</small>
+      </div>
+      <datalist id="category">
+        <option value="Mobile"></option>
+        <option value="TV"></option>
+        <option value="Tab"></option>
+        <option value="Watches"></option>
+      </datalist>
+
+      <label for="productDesc" class="fs-5 mb-2">Product Desc : </label>
+      <textarea
+        oninput="validateInputs(this)"
+        type="text"
+        id="productDesc"
+        class="form-control mb-3"
+      ></textarea>
+      <div class="alert alert-danger py-1 mt-2 d-none">
+        <small>product description must be understand</small>
+      </div>
+
+      <div class="form-floating mb-3 mt-4">
+        <input
+          accept="image/*"
+          type="file"
+          class="form-control border-0 bor der-bottom"
+          id="productImage"
+        />
+        <label for="productImage">Product Image</label>
+      </div>
+
+      <button id="addBtn" class="btn btn-primary" onclick="addProduct()">
+        Add Product
+      </button>
+      <button
+        id="updateBtn"
+        class="btn btn-warning text-dark d-none"
+        onclick="updateProduct()"
+      >
+        Update Product
+      </button>
+    </div>
+
+    <div class="container">
+      <input
+        id="productSearch"
+        oninput="searchProducts()"
+        placeholder="search by name"
+        type="text"
+        class="form-control my-2"
+      />
+      <div id="row" class="row gy-4 py-5 px-2"></div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
